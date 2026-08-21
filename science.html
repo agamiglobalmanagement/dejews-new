@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science — DE JEWS</title>
+<meta name="description" content="DE JEWS Science coverage. All Goys Mistaken.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0a0a0a;--paper:#f7f4ef;--paper2:#eeebe4;--red:#b22222;--dim:#6b6560;--border:#c8c2b8;--font-head:'Playfair Display',serif;--font-body:'Source Serif 4',serif;--font-mono:'DM Mono',monospace;}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
+.masthead{border-bottom:3px solid var(--ink);padding:0 40px;}
+.masthead-top{display:flex;justify-content:space-between;align-items:center;padding:10px 0 6px;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--dim);}
+.masthead-logo{text-align:center;padding:18px 0 10px;border-bottom:1px solid var(--border);}
+.logo-agm{font-family:var(--font-mono);font-size:11px;letter-spacing:.5em;color:var(--dim);display:block;margin-bottom:4px;}
+.logo-name{font-family:var(--font-head);font-size:clamp(52px,8vw,96px);font-weight:900;line-height:1;letter-spacing:-.02em;color:var(--ink);display:block;text-decoration:none;}
+.logo-sub{font-family:var(--font-head);font-size:clamp(11px,1.5vw,15px);font-style:italic;font-weight:400;color:var(--dim);letter-spacing:.08em;display:block;margin-top:4px;}
+.nav-bar{display:flex;justify-content:center;gap:0;padding:8px 0 0;overflow-x:auto;}
+.nav-bar a{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:6px 18px;border-right:1px solid var(--border);white-space:nowrap;transition:background .15s;}
+.nav-bar a:first-child{border-left:1px solid var(--border)}
+.nav-bar a:hover,.nav-bar a.active{background:var(--ink);color:var(--paper)}
+.breaking{background:var(--red);color:#fff;padding:8px 40px;display:flex;align-items:center;gap:16px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;}
+.breaking-label{font-weight:500;background:#fff;color:var(--red);padding:2px 8px;flex-shrink:0;letter-spacing:.1em;}
+.breaking-text{font-style:italic;opacity:.95;}
+.container{max-width:1180px;margin:0 auto;padding:0 40px}
+.cat-header{padding:28px 0 20px;border-bottom:3px solid var(--ink);margin-bottom:32px;}
+.cat-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:8px;}
+.cat-title{font-family:var(--font-head);font-size:clamp(40px,6vw,72px);font-weight:900;line-height:.95;letter-spacing:-.02em;}
+.lead-section{padding:32px 0;border-bottom:1px solid var(--border);}
+.lead-grid{display:grid;grid-template-columns:1fr 1px 300px;gap:0;}
+.col-divider{background:var(--border)}
+.lead-main{padding:0 32px 0 0}
+.lead-kicker{font-family:var(--font-mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:block;}
+.lead-headline{font-family:var(--font-head);font-size:clamp(26px,3.2vw,42px);font-weight:700;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;}
+.lead-deck{font-size:17px;font-weight:300;line-height:1.65;color:#2a2a2a;margin-bottom:16px;font-style:italic;}
+.lead-byline{font-family:var(--font-mono);font-size:10px;color:var(--dim);letter-spacing:.1em;border-top:1px solid var(--border);padding-top:10px;}
+.lead-body{font-size:15px;line-height:1.8;color:#1a1a1a;margin-top:14px;}
+.lead-body p+p{margin-top:12px}
+.lead-body p:first-child::first-letter{font-family:var(--font-head);font-size:64px;font-weight:900;float:left;line-height:.75;margin:6px 8px 0 0;color:var(--ink);}
+.lead-sidebar{padding:0 0 0 32px}
+.sidebar-section-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:16px;}
+.sidebar-story{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border);}
+.sidebar-story:last-child{border-bottom:none}
+.sidebar-kicker{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:4px;}
+.sidebar-headline{font-family:var(--font-head);font-size:15px;font-weight:700;line-height:1.2;margin-bottom:6px;}
+.sidebar-deck{font-size:12.5px;line-height:1.55;color:#444;font-style:italic;}
+.section-divider{display:flex;align-items:center;gap:16px;padding:24px 0 20px;border-bottom:1px solid var(--border);}
+.section-divider-line{flex:1;height:1px;background:var(--border)}
+.section-divider-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);white-space:nowrap;}
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--border);border:1px solid var(--border);margin-bottom:32px;}
+.story-card{background:var(--paper);padding:24px;}
+.story-card:hover{background:var(--paper2)}
+.story-kicker{font-family:var(--font-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.story-headline{font-family:var(--font-head);font-size:clamp(16px,1.8vw,21px);font-weight:700;line-height:1.2;margin-bottom:10px;}
+.story-deck{font-size:13px;line-height:1.6;color:#444;font-style:italic;margin-bottom:10px;}
+.story-byline{font-family:var(--font-mono);font-size:9px;color:var(--dim);letter-spacing:.1em;}
+.quote-block{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:24px 40px;margin:32px 0;text-align:center;}
+.quote-text{font-family:var(--font-head);font-size:clamp(20px,2.8vw,32px);font-style:italic;line-height:1.3;color:var(--ink);margin-bottom:10px;}
+.quote-attr{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;}
+footer{border-top:3px solid var(--ink);padding:32px 40px;text-align:center;}
+.footer-logo{font-family:var(--font-head);font-size:28px;font-weight:900;margin-bottom:6px;}
+.footer-sub{font-family:var(--font-mono);font-size:10px;color:var(--dim);letter-spacing:.2em;margin-bottom:20px;}
+.footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:16px;}
+.footer-links a{font-family:var(--font-mono);font-size:10px;color:var(--dim);text-decoration:none;letter-spacing:.14em;text-transform:uppercase;}
+.footer-links a:hover{color:var(--ink)}
+.footer-copy{font-family:var(--font-mono);font-size:9px;color:var(--dim);letter-spacing:.1em;}
+@media(max-width:900px){
+  .masthead,.container{padding:0 20px}
+  .lead-grid{grid-template-columns:1fr}
+  .col-divider{display:none}
+  .lead-main,.lead-sidebar{padding:0 0 24px 0}
+  .stories-grid{grid-template-columns:1fr}
+  .breaking{padding:8px 20px}
+  footer{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <span id="dateDisplay"></span>
+    <span style="font-style:italic">Independent Reporting. Questionable Sources.</span>
+    <span style="text-align:right">Rabbi Says: Dress Warm</span>
+  </div>
+  <div class="masthead-logo">
+    <span class="logo-agm">AGM — All Goys Mistaken</span>
+    <a href="index.html" class="logo-name">DE JEWS</a>
+    <span class="logo-sub">The Paper of Record for Everything the Goyim Got Wrong</span>
+  </div>
+  <nav class="nav-bar">
+    <a href="index.html">Home</a>
+    <a href="religion.html">Religion</a>
+    <a href="money.html">Money</a>
+    <a href="weather.html">Weather</a>
+    <a href="world.html">World</a>
+    <a href="science.html">Science</a>
+    <a href="health.html">Health</a>
+    <a href="social.html">Social Life</a>
+  </nav>
+</header>
+
+<div class="breaking">
+  <span class="breaking-label">BREAKING</span>
+  <span class="breaking-text">Scientists Discover New Particle; Debate About What to Name It Expected to Last Longer Than the Study</span>
+</div>
+
+<div class="container">
+
+  <div class="cat-header">
+    <span class="cat-label">Section</span>
+    <h1 class="cat-title">Science</h1>
+  </div>
+
+  <section class="lead-section">
+    <div class="lead-grid">
+      <article class="lead-main">
+        <span class="lead-kicker">Science</span>
+        <h2 class="lead-headline">New Study Confirms Arguing Is Genetically Inherited; Funding Agency Disputes Methodology</h2>
+        <p class="lead-deck">The researchers say their data is conclusive. Their parents disagree. Their grandparents have questions about the sample size.</p>
+        <div class="lead-byline">By DR. A. SHAPIRO, Science Desk</div>
+        <div class="lead-body">
+          <p>A team of researchers at Hebrew University published findings Monday suggesting that the tendency to argue is not learned behavior but genetic in origin, transmitted through a specific sequence on chromosome 7 that the team has named, provisionally, the "But Actually" gene. The study, which took four years and involved 2,400 participants, was immediately disputed by the funding agency that paid for it.</p>
+          <p>The lead researcher said the findings "speak for themselves," at which point three co-authors interrupted to clarify what the findings were saying. The peer review process, which is ongoing, has so far produced 847 pages of comments, 203 pages of responses to those comments, and a separate document addressing what one reviewer described as "the tone of the responses."</p>
+          <p>A separate team has announced plans to replicate the study. The original team has preemptively disputed the replication. The journal that published the original study has issued a statement saying it is "aware of the situation" and is monitoring it "closely." It has not elaborated on what closely means in this context.</p>
+        </div>
+      </article>
+      <div class="col-divider"></div>
+      <aside class="lead-sidebar">
+        <div class="sidebar-section-label">Also in Science</div>
+                <div class="sidebar-story">
+          <div class="sidebar-kicker">Science</div>
+          <div class="sidebar-headline">Man Googles Symptoms at 2 AM; Has Either a Cold or Seven Things</div>
+          <div class="sidebar-deck">"Probably the cold," said his doctor. The man remains unconvinced.</div>
+        </div>
+        <div class="sidebar-story">
+          <div class="sidebar-kicker">Science</div>
+          <div class="sidebar-headline">AI System Learns to Argue; Immediately Begins Arguing About Whether It Is Arguing</div>
+          <div class="sidebar-deck">"This is a significant breakthrough," said one researcher. "Or a problem. We're still deciding."</div>
+        </div>
+        <div class="sidebar-story">
+          <div class="sidebar-kicker">Science</div>
+          <div class="sidebar-headline">Coffee Shown to Extend Life; Amount Required to Do So Described as "Ambitious"</div>
+          <div class="sidebar-deck">"Seven cups a day," said the study. Nobody asked any follow-up questions.</div>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <div class="quote-block">
+    <div class="quote-text">"We did not invent arguing. We perfected it. There is a difference, and we are happy to explain it at length."</div>
+    <div class="quote-attr">— The Research Team, In Their Own Words</div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <div class="section-divider-label">More Stories</div>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="stories-grid">
+        <article class="story-card">
+      <div class="story-kicker">Science</div>
+      <h3 class="story-headline">Researchers Find Chicken Soup Has No Measurable Medical Properties; Grandmothers Reject Findings</h3>
+      <p class="story-deck">"The researchers," said one grandmother, "did not try my chicken soup."</p>
+      <div class="story-byline">By DR. F. KLEIN</div>
+    </article>
+    <article class="story-card">
+      <div class="story-kicker">Science</div>
+      <h3 class="story-headline">Study: Hummus Consumption Inversely Correlated With Understanding of Regional Geopolitics</h3>
+      <p class="story-deck">"The more hummus consumed per capita, the less a population tends to understand why anyone would argue about it."</p>
+      <div class="story-byline">By DR. A. SHAPIRO</div>
+    </article>
+    <article class="story-card">
+      <div class="story-kicker">Science</div>
+      <h3 class="story-headline">Scientists Clone First Sheep; Sheep's Mother Has Opinions About the Clone</h3>
+      <p class="story-deck">"She prefers the original," confirmed one researcher, who did not elaborate further.</p>
+      <div class="story-byline">By STAFF REPORTER</div>
+    </article>
+    <article class="story-card">
+      <div class="story-kicker">Science</div>
+      <h3 class="story-headline">New Research Suggests Overthinking May Be Protective Evolutionary Trait; Further Research Required</h3>
+      <p class="story-deck">Scientists plan to think about it more before concluding anything.</p>
+      <div class="story-byline">By B. HOROWITZ</div>
+    </article>
+    <article class="story-card">
+      <div class="story-kicker">Science</div>
+      <h3 class="story-headline">Israeli Tech Startup Claims to Have Solved Problem Nobody Knew Existed; Investors Very Interested</h3>
+      <p class="story-deck">"We don't fully understand what it does," confirmed one investor, "which is usually a good sign."</p>
+      <div class="story-byline">By A. WEISS</div>
+    </article>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">DE JEWS</div>
+  <div class="footer-sub">All Goys Mistaken — AGM Independent Media</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="religion.html">Religion</a>
+    <a href="money.html">Money</a>
+    <a href="weather.html">Weather</a>
+    <a href="world.html">World</a>
+    <a href="science.html">Science</a>
+    <a href="health.html">Health</a>
+    <a href="social.html">Social Life</a>
+    <a href="opinion.html">Opinion</a>
+  </div>
+  <div class="footer-copy">© 2026 DE JEWS. All rights reserved. All goys mistaken.</div>
+</footer>
+
+<script>
+const d=new Date();
+const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+document.getElementById('dateDisplay').textContent=days[d.getDay()]+', '+months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+</script>
+</body>
+</html>
