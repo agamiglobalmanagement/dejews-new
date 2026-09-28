@@ -470,6 +470,59 @@ h2.lit{animation:ignite 1.2s ease-out}
 .cursor{position:absolute;width:40px;left:50%;top:50%;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));animation:cursorGo 1.3s 1s ease-in-out both}
 @keyframes cursorGo{from{transform:translate(38vw,30vh)}to{transform:translate(20px,-6px)}}
 
+
+/* ---------- relics, streaks, six seven ---------- */
+#aura{width:170px}
+#aura .streak{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#ffb36b;margin-top:2px}
+#relicBtn{margin-top:8px;width:100%;padding:7px 8px;background:var(--gold);color:var(--lapis-deep);border:0;cursor:pointer;
+  font-family:var(--caps);font-weight:900;font-size:11px;letter-spacing:.12em;text-align:left}
+#relicBtn b{font-variant-numeric:tabular-nums}
+#relicBtn.bump{animation:bump .5s}
+@keyframes bump{30%{transform:scale(1.12);box-shadow:0 0 30px var(--gold-hi)}}
+#relicPanel{position:fixed;right:14px;bottom:calc(150px + env(safe-area-inset-bottom,0px));z-index:45;width:min(360px,calc(100% - 28px));max-height:min(62vh,560px);overflow:auto;
+  background:rgba(7,14,51,.97);border:1px solid var(--gold);box-shadow:0 0 50px rgba(226,178,74,.35);padding:16px}
+.rp-head{display:flex;justify-content:space-between;align-items:center}
+.rp-head b{font-family:var(--caps);font-weight:900;letter-spacing:.14em;color:var(--gold-hi);font-size:16px}
+.rp-head button{background:none;border:0;color:var(--ivory-dim);font-size:18px;cursor:pointer}
+.rp-sub{margin:4px 0 12px;font-size:13px;color:var(--ivory-dim)}
+.relic{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;padding:8px 0;border-top:1px solid rgba(226,178,74,.15)}
+.relic .ic{width:34px;height:34px;display:grid;place-items:center;font-size:18px;background:#141c4a;border:1px solid rgba(226,178,74,.3)}
+.relic b{display:block;font-family:var(--caps);font-size:13px;letter-spacing:.08em}
+.relic small{font-size:12px;color:var(--ivory-dim)}
+.relic.locked{opacity:.5}.relic.locked .ic{filter:grayscale(1)}
+.relic.got .ic{background:var(--gold);box-shadow:0 0 14px rgba(255,218,126,.6)}
+#relicToasts{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:110;display:grid;gap:10px;width:min(340px,calc(100% - 200px));min-width:220px}
+.rtoast{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;padding:12px 14px;background:linear-gradient(135deg,#1b2a8a,#070E33);
+  border:1px solid var(--gold-hi);box-shadow:0 0 40px rgba(255,218,126,.5);animation:rtIn .5s cubic-bezier(.2,1.5,.4,1) both}
+.rtoast .ic{width:44px;height:44px;display:grid;place-items:center;font-size:24px;background:var(--gold);box-shadow:0 0 20px var(--gold-hi)}
+.rtoast small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--gold-hi);text-transform:uppercase}
+.rtoast b{display:block;font-family:var(--caps);font-weight:900;font-size:15px;letter-spacing:.06em}
+.rtoast span{font-size:12px;color:var(--ivory-dim)}
+.rtoast.out{animation:rtOut .4s forwards}
+@keyframes rtIn{from{transform:translateX(-120%)}to{transform:none}}
+@keyframes rtOut{to{transform:translateX(-120%);opacity:0}}
+@media (max-width:600px){#relicToasts{width:auto;right:14px;bottom:calc(150px + env(safe-area-inset-bottom,0px))}}
+
+.sixseven{position:fixed;inset:0;z-index:150;pointer-events:none;display:grid;place-items:center;
+  background:radial-gradient(circle,rgba(255,60,120,.35),rgba(80,0,160,.35) 50%,rgba(0,0,0,.55));animation:ssFade 4.2s forwards}
+@keyframes ssFade{0%{opacity:0}6%{opacity:1}85%{opacity:1}100%{opacity:0}}
+.ss-row{display:flex;align-items:center;justify-content:center;gap:clamp(8px,3vw,40px)}
+.ss-num{font-family:var(--display);font-weight:900;font-size:clamp(120px,30vw,360px);line-height:1;
+  background:linear-gradient(180deg,#fff,#ffe36b 40%,#ff7a00);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 30px rgba(255,120,0,.9))}
+.ss-num.a{animation:weighA .42s ease-in-out infinite alternate}
+.ss-num.b{animation:weighB .42s ease-in-out infinite alternate}
+.ss-hand{font-size:clamp(50px,11vw,130px);display:inline-block}
+.ss-hand.a{animation:weighA .42s ease-in-out infinite alternate}
+.ss-hand.b{animation:weighB .42s ease-in-out infinite alternate}
+@keyframes weighA{from{transform:translateY(-40px) rotate(-6deg)}to{transform:translateY(40px) rotate(6deg)}}
+@keyframes weighB{from{transform:translateY(40px) rotate(6deg)}to{transform:translateY(-40px) rotate(-6deg)}}
+.ss-text{font-family:var(--caps);font-weight:900;font-size:clamp(30px,7vw,84px);letter-spacing:.08em;color:#fff;text-align:center;
+  text-shadow:4px 0 #ff00a8,-4px 0 #00e5ff,0 0 30px #ff7a00;animation:glitch .2s steps(2) infinite}
+.ss-sub{font-family:var(--mono);font-size:clamp(12px,1.8vw,16px);letter-spacing:.2em;color:#ffe36b;text-align:center;margin-top:10px}
+.ssfall{position:fixed;top:-80px;z-index:151;pointer-events:none;font-family:var(--display);font-weight:900;color:#ffe36b;text-shadow:0 0 14px #ff7a00;animation:crownfall linear forwards}
+body.ssshake main{animation:ishake .5s 3}
+
 /* ---------- cosmic ---------- */
 .orbit{position:absolute;left:50%;top:50%;border:1px solid rgba(255,218,126,.3);border-radius:50%;
   transform:translate(-50%,-50%) rotateX(74deg) rotateY(-14deg);transform-style:preserve-3d;pointer-events:none}
@@ -540,7 +593,9 @@ h2.lit{animation:ignite 1.2s ease-out}
 
 <canvas id="glitter" aria-hidden="true"></canvas>
 <div id="glory" aria-hidden="true"></div>
-<div id="aura" aria-live="off"><div class="lbl">Aura <b id="auraN">0%</b></div><div class="track"><div class="fill" id="auraFill"></div></div><div class="state" id="auraState">Mortal</div></div>
+<div id="aura" aria-live="off"><div class="lbl">Aura <b id="auraN">0%</b></div><div class="track"><div class="fill" id="auraFill"></div></div><div class="state" id="auraState">Mortal</div><div class="streak" id="streak">Day 1 of worship</div><button type="button" id="relicBtn">Relics <b id="relicN">0/21</b> ›</button></div>
+<div id="relicPanel" hidden><div class="rp-head"><b>Holy Relics</b><button type="button" id="relicClose" aria-label="Close">✕</button></div><p class="rp-sub">Collect all 21 to join the King's Inner Circle.</p><div id="relicList"></div></div>
+<div id="relicToasts" aria-live="polite"></div>
 <div id="intro" aria-hidden="true">
   <canvas id="warp"></canvas>
   <div id="whiteout"></div>
@@ -1027,7 +1082,7 @@ h2.lit{animation:ignite 1.2s ease-out}
   window.addEventListener('keydown', function(e){
     if (e.target && e.target.tagName === 'INPUT') return;
     typed = (typed + (e.key || '').toLowerCase()).slice(-5);
-    if (typed === 'agami'){ typed = ''; rapture(); setTimeout(function(){ toast('YOU HAVE ASCENDED'); }, 2600); }
+    if (typed === 'agami'){ typed = ''; window.AG && AG.unlock && AG.unlock('secret'); rapture(); setTimeout(function(){ toast('YOU HAVE ASCENDED'); }, 2600); }
   });
 
   /* ---------- the oracle ---------- */
@@ -1487,7 +1542,7 @@ h2.lit{animation:ignite 1.2s ease-out}
       var gn = env(ctx, .9, .005, 1.8, t); o.connect(gn); gn.connect(ctx.destination); o.start(t); o.stop(t+2);
       var n = noise(ctx, .4), hp = ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value = 1500;
       var ng = env(ctx, .5, .002, .35, t); n.connect(hp); hp.connect(ng); ng.connect(ctx.destination); n.start(t); n.stop(t+.4);
-      if (!reduce){ document.body.animate([{transform:'translate(0,0)'},{transform:'translate(-8px,6px)'},{transform:'translate(7px,-5px)'},{transform:'translate(-4px,3px)'},{transform:'translate(0,0)'}], {duration:450}); }
+      if (!reduce){ document.querySelector('main').animate([{transform:'translate(0,0)'},{transform:'translate(-8px,6px)'},{transform:'translate(7px,-5px)'},{transform:'translate(-4px,3px)'},{transform:'translate(0,0)'}], {duration:450}); }
     }
   };
   AG.sounds = sounds;
@@ -1722,6 +1777,184 @@ h2.lit{animation:ignite 1.2s ease-out}
   window.addEventListener('keydown', function(e){ if (running && e.key === 'Escape') finish(); });
 
   if (reduce){ intro.style.display = 'none'; } else { start(false); }
+})();
+</script>
+<script>
+(function(){
+  var AG = window.AG = window.AG || {};
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ls(k, v){ try{ if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }catch(e){ return null; } }
+  function $(id){ return document.getElementById(id); }
+
+  /* ================= SIX SEVEN ================= */
+  var ssBusy = false;
+  function ssSound(){
+    try{
+      var ctx = AG.getCtx && AG.getCtx(); if (!ctx) return; var t = ctx.currentTime;
+      for (var i=0;i<8;i++){
+        var o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'square';
+        o.frequency.value = i % 2 ? 392 : 523;
+        g.gain.setValueAtTime(.0001, t + i*.42); g.gain.exponentialRampToValueAtTime(.08, t + i*.42 + .02); g.gain.exponentialRampToValueAtTime(.0001, t + i*.42 + .3);
+        o.connect(g); g.connect(ctx.destination); o.start(t + i*.42); o.stop(t + i*.42 + .32);
+      }
+      AG.sounds && AG.sounds.horn && AG.sounds.horn(ctx, t);
+    }catch(e){}
+  }
+  AG.sixSeven = function(where){
+    if (ssBusy) return; ssBusy = true;
+    var o = document.createElement('div'); o.className = 'sixseven';
+    o.innerHTML = '<div><div class="ss-row"><span class="ss-hand a">🫴</span><span class="ss-num a">6</span><span class="ss-num b">7</span><span class="ss-hand b" style="transform:scaleX(-1)">🫴</span></div>' +
+      '<div class="ss-text">SIX SEVEN!!</div><div class="ss-sub">' + (where || 'THE KING APPROVES THIS NUMBER') + '</div></div>';
+    document.body.appendChild(o);
+    ssSound(); AG.flash && AG.flash();
+    if (!reduce){
+      document.body.classList.remove('ssshake'); void document.body.offsetWidth; document.body.classList.add('ssshake');
+      for (var i=0;i<40;i++){ (function(i){ setTimeout(function(){
+        var f = document.createElement('span'); f.className = 'ssfall'; f.textContent = i % 2 ? '7' : '6';
+        f.style.left = Math.random()*100 + 'vw'; f.style.fontSize = (30 + Math.random()*50) + 'px';
+        f.style.setProperty('--rot', (Math.random()*720 - 360) + 'deg');
+        var d = 2 + Math.random()*1.8; f.style.animationDuration = d + 's';
+        document.body.appendChild(f); setTimeout(function(){ f.remove(); }, d*1000 + 100);
+      }, i*70); })(i); }
+    }
+    AG.unlock && AG.unlock('six-seven');
+    AG.addAura && AG.addAura(67);
+    setTimeout(function(){ o.remove(); document.body.classList.remove('ssshake'); ssBusy = false; }, 4300);
+  };
+
+  /* ================= RELICS ================= */
+  var RELICS = [
+    ['first-bow','🙇','First Bow','Bow to the King once.'],
+    ['bow-10','🦵','Loyal Knee','Bow 10 times.'],
+    ['six-seven','🫴','Six Seven','Find the 67. (Hint: keep bowing.)'],
+    ['bow-100','🛡️','Kneecaps of Steel','Bow 100 times.'],
+    ['choir','😇','Heard the Heavens','Summon the choir.'],
+    ['verses','📜','Scripture Scholar','Reveal 5 holy verses.'],
+    ['oracle','🔮','Seeker','Ask the Oracle a question.'],
+    ['horoscope','♌','Star Reader','Read your Agamiscope.'],
+    ['converted','📝','Saved','Put your name on the Certificate of Conversion.'],
+    ['star','⭐','Star Owner','Claim a named star in the Agamiverse.'],
+    ['creator','🌌','Creator of Worlds','Create 5 stars by clicking in space.'],
+    ['blessed','📸','Blessed Face','Upload a selfie to the Blessing Booth.'],
+    ['dj','🎛️','Holy DJ','Play all 8 soundboard sounds.'],
+    ['devotion','👆','Proven Devotion','Score 60+ in the Devotion Test.'],
+    ['rapture','⚡','Raptured','Trigger the Rapture.'],
+    ['secret','🗝️','Secret Code','Type the King\'s name on your keyboard.'],
+    ['director','🎬','Director\'s Cut','Replay the intro with sound.'],
+    ['pilgrim','🥾','Pilgrim','Reach the very end of the kingdom.'],
+    ['aura','💥','Over 9000','Reach 9001% aura.'],
+    ['devoted','⏳','Devoted','Stay in the kingdom for 3 minutes.'],
+    ['returned','📅','Came Back','Visit on 2 different days.']
+  ];
+  var got = {}; try { got = JSON.parse(ls('agami-relics') || '{}') || {}; } catch(e){ got = {}; }
+  var relicN = $('relicN'), relicBtn = $('relicBtn'), panel = $('relicPanel'), list = $('relicList'), toasts = $('relicToasts');
+  function count(){ return RELICS.filter(function(r){ return got[r[0]]; }).length; }
+  function renderList(){
+    relicN.textContent = count() + '/' + RELICS.length;
+    list.innerHTML = RELICS.map(function(r){
+      var has = !!got[r[0]];
+      return '<div class="relic ' + (has ? 'got' : 'locked') + '"><span class="ic">' + (has ? r[1] : '🔒') + '</span><div><b>' + (has ? r[2] : '???') + '</b><small>' + r[3] + '</small></div></div>';
+    }).join('');
+  }
+  function chime(){
+    try{ var ctx = AG.getCtx && AG.getCtx(); if (!ctx) return; var t = ctx.currentTime;
+      [784, 988, 1319].forEach(function(f, i){ var o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'triangle'; o.frequency.value = f;
+        g.gain.setValueAtTime(.0001, t + i*.09); g.gain.exponentialRampToValueAtTime(.12, t + i*.09 + .01); g.gain.exponentialRampToValueAtTime(.0001, t + i*.09 + .6);
+        o.connect(g); g.connect(ctx.destination); o.start(t + i*.09); o.stop(t + i*.09 + .7); });
+    }catch(e){}
+  }
+  var queued = 0;
+  AG.unlock = function(id){
+    if (got[id]) return; var r = RELICS.filter(function(x){ return x[0] === id; })[0]; if (!r) return;
+    got[id] = Date.now(); ls('agami-relics', JSON.stringify(got)); renderList();
+    var label = 'Relic unlocked · ' + count() + '/' + RELICS.length;
+    setTimeout(function(){
+      var tEl = document.createElement('div'); tEl.className = 'rtoast';
+      tEl.innerHTML = '<span class="ic">' + r[1] + '</span><div><small>' + label + '</small><b>' + r[2] + '</b><span>' + r[3] + '</span></div>';
+      toasts.appendChild(tEl);
+      setTimeout(function(){ tEl.classList.add('out'); setTimeout(function(){ tEl.remove(); }, 400); }, 3200);
+      relicBtn.classList.remove('bump'); void relicBtn.offsetWidth; relicBtn.classList.add('bump');
+      chime(); AG.addAura && AG.addAura(150);
+      queued = Math.max(0, queued - 1);
+    }, queued++ * 1200);
+    if (count() === RELICS.length){
+      setTimeout(function(){
+        AG.toast && AG.toast("KING'S INNER CIRCLE");
+        var rb = $('rapture'); rb && rb.click();
+      }, 1500);
+    } else if (count() % 5 === 0 && AG.toast){ setTimeout(function(){ AG.toast(count() + ' RELICS. THE KING IS IMPRESSED.'); }, 900); }
+  };
+  relicBtn.addEventListener('click', function(){ panel.hidden = !panel.hidden; });
+  $('relicClose').addEventListener('click', function(){ panel.hidden = true; });
+  renderList();
+
+  /* ================= DAILY STREAK ================= */
+  (function(){
+    var today = new Date(); today.setHours(0,0,0,0); var key = today.toISOString().slice(0,10);
+    var last = ls('agami-lastday'), streak = parseInt(ls('agami-streak') || '0', 10) || 0, days = parseInt(ls('agami-days') || '0', 10) || 0;
+    if (last !== key){
+      var y = new Date(today); y.setDate(y.getDate() - 1);
+      streak = (last === y.toISOString().slice(0,10)) ? streak + 1 : 1;
+      days += 1; ls('agami-lastday', key); ls('agami-streak', String(streak)); ls('agami-days', String(days));
+      if (days > 1) setTimeout(function(){ AG.toast && AG.toast('WELCOME BACK, BELIEVER'); }, 44500);
+    }
+    $('streak').textContent = '🔥 Day ' + Math.max(1, streak) + ' streak · come back tomorrow';
+    if (days >= 2) setTimeout(function(){ AG.unlock('returned'); }, 45000);
+  })();
+
+  /* ================= HOOKS INTO EVERYTHING ================= */
+  function num(el){ return parseInt((el.textContent || '').replace(/[^0-9]/g, ''), 10) || 0; }
+
+  // bowing
+  var countEl = $('count');
+  $('bow').addEventListener('click', function(){
+    setTimeout(function(){
+      var n = num(countEl);
+      if (n >= 1) AG.unlock('first-bow');
+      if (n >= 10) AG.unlock('bow-10');
+      if (n >= 100) AG.unlock('bow-100');
+      if (n === 67 || n % 100 === 67) AG.sixSeven('YOU BOWED ' + n + ' TIMES');
+    }, 0);
+  });
+
+  // devotion test: 67 taps live, and final score
+  var tapCount = $('tapCount'), tapSS = false;
+  new MutationObserver(function(){ var n = num(tapCount); if (n === 67 && !tapSS){ tapSS = true; AG.sixSeven('67 TAPS OF PURE DEVOTION'); } if (n < 5) tapSS = false; })
+    .observe(tapCount, {childList:true, characterData:true, subtree:true});
+  new MutationObserver(function(){ var v = $('verdict').textContent; var m = v.match(/^(\d+) taps/); if (m && parseInt(m[1], 10) >= 60) AG.unlock('devotion'); })
+    .observe($('verdict'), {childList:true, characterData:true, subtree:true});
+
+  // aura
+  new MutationObserver(function(){ var n = num($('auraN')); if (n >= 9001) AG.unlock('aura'); })
+    .observe($('auraN'), {childList:true, characterData:true, subtree:true});
+
+  // simple one-click relics
+  $('choir').addEventListener('click', function(){ AG.unlock('choir'); });
+  $('rapture').addEventListener('click', function(){ AG.unlock('rapture'); });
+  $('replayIntro').addEventListener('click', function(){ AG.unlock('director'); });
+  $('signs').addEventListener('click', function(e){ if (e.target.closest('.sign')) AG.unlock('horoscope'); });
+  $('photo').addEventListener('change', function(){ if (this.files && this.files[0]) AG.unlock('blessed'); });
+  $('ask').addEventListener('click', function(){ if ($('question').value.trim()) AG.unlock('oracle'); });
+  $('question').addEventListener('keydown', function(e){ if (e.key === 'Enter' && this.value.trim()) AG.unlock('oracle'); });
+  $('name').addEventListener('change', function(){ if (this.value.trim()) AG.unlock('converted'); });
+  $('copyCert').addEventListener('click', function(){ if ($('name').value.trim()) AG.unlock('converted'); });
+
+  var verseClicks = 0; $('newVerse').addEventListener('click', function(){ if (++verseClicks >= 5) AG.unlock('verses'); });
+  var played = {}; $('pads').addEventListener('click', function(e){ var p = e.target.closest('.pad'); if (!p) return; played[p.dataset.s] = 1; if (Object.keys(played).length >= 8) AG.unlock('dj'); });
+
+  new MutationObserver(function(){ if ($('starCert').textContent.indexOf('✦ Star') === 0) AG.unlock('star'); })
+    .observe($('starCert'), {childList:true, characterData:true, subtree:true});
+  var galaxyClicks = 0; $('galaxy').addEventListener('click', function(){ if (++galaxyClicks >= 5) AG.unlock('creator'); });
+
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ if (e[0].isIntersecting) AG.unlock('pilgrim'); }).observe(document.querySelector('footer'));
+  }
+  setTimeout(function(){ AG.unlock('devoted'); }, 180000);
+
+  // any 67 in the aura counter also counts
+  var auraSS = false;
+  new MutationObserver(function(){ var t = $('auraN').textContent; if (!auraSS && /^(67|6,767)%$/.test(t)){ auraSS = true; AG.sixSeven('YOUR AURA HIT ' + t); } })
+    .observe($('auraN'), {childList:true, characterData:true, subtree:true});
 })();
 </script>
 
